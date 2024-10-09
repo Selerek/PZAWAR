@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Sci from './Sci';
 import NewComponent from './NewComponent';
+import Formson from './Formson';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
     <App />
     <Sci />
     <NewComponent/>
+    <Formson/>
   </React.StrictMode>
 );
 

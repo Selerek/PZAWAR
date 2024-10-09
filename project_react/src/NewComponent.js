@@ -4,6 +4,7 @@ import "./NewStatic.css"
 function NewComponent(){
     const[name, SetName] = useState("Bartek") 
     const[num, SetNum] = useState(0)
+    
     useEffect(() => {} , [name],
     console.log("useEffect is called"),
     []
