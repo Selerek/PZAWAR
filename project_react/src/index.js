@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import Sci from './Sci';
 import NewComponent from './NewComponent';
 import Formson from './Formson';
+import MyOwnTable from './MyOwnTable';
+import MyOwnRow from './MyOwnRow';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
     <Sci />
     <NewComponent/>
     <Formson/>
+    <MyOwnTable/>
   </React.StrictMode>
 );
 

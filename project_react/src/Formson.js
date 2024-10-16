@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import "./NewStatic.css"
 
 function NewComponent(){
@@ -6,7 +6,6 @@ function NewComponent(){
     const name1Ref = useRef()
     const name2Ref = useRef()
     const selectValue = useRef()
-    const redioValue = useRef()
     const colorValue = useRef()
     const [val1, setVal1] = useState("")
     const [val2, setVal2] = useState("")
