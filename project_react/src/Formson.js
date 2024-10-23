@@ -53,6 +53,9 @@ function NewComponent(){
                 {val3}
                 
             </div>
+            <div>
+                <img src="./icons/icon14_01.png" alt="icon"/>
+            </div>
         </div>
     )
 }

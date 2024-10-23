@@ -3,20 +3,17 @@ import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
-import Sci from './Sci';
-import NewComponent from './NewComponent';
-import Formson from './Formson';
-import MyOwnTable from './MyOwnTable';
-import MyOwnRow from './MyOwnRow';
+import Task01 from './task01/task01';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-    <Sci />
-    <NewComponent/>
-    <Formson/>
-    <MyOwnTable/>
+    {/* <Formson/> */}
+    {/* <MyOwnTable/> */}
+    <Task01 />
+    
+    
   </React.StrictMode>
 );
 
