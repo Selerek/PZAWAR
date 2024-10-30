@@ -1,6 +1,8 @@
 const express = require('express')
-
+const cors = require('cors')
 const application = express()
+
+application.use(cors())
 
 application.get('/', (request, response) => response.send("<div><h1>hello world</h1></div>"))
 application.get('/abc', (request, response) => {
