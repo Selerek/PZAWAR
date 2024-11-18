@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
-import AxiosExample from './AxiosExample';
+import FormTask from './FormTask';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-    <AxiosExample />
+    <FormTask/>
+    
     
     
   </React.StrictMode>

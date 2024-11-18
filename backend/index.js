@@ -1,8 +1,22 @@
 const express = require('express')
 const cors = require('cors')
 const application = express()
+const dataglobal = []
 
 application.use(cors())
+application.use(express.json())
+application.post('/wyslanodane', (request, response) => {
+    const data = request.body; 
+    console.log('Received data:', data);
+    dataglobal.push(data)
+    response.send({
+        message: "Data received successfully",
+        receivedData: data,
+    });
+});
+application.get('/wysylanie', (request, response) => {
+    response.send(dataglobal)
+})
 
 application.get('/', (request, response) => response.send("<div><h1>hello world</h1></div>"))
 application.get('/abc', (request, response) => {
