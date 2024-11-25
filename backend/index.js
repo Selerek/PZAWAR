@@ -3,8 +3,19 @@ const cors = require('cors')
 const application = express()
 const dataglobal = []
 
+
+const pokemonrouter = express.Router()
 application.use(cors())
 application.use(express.json())
+
+
+
+
+
+
+
+
+
 application.post('/wyslanodane', (request, response) => {
     const data = request.body; 
     console.log('Received data:', data);
