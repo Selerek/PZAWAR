@@ -13,6 +13,18 @@ const e = require('express')
 const pokemonsImages = "./images/"
 
 
+
+application.post('/user/register', (request, response) => {
+    const data = request.body; 
+    console.log('Received data:', data);
+    dataglobal.push(data)
+    response.send({
+        message: "Data received successfully",
+        receivedData: data,
+    });
+})
+
+
 pokemonrouter.get('/', (request, response) => {
     response.send(pokemonspath)
 })
