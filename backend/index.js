@@ -4,25 +4,33 @@ const application = express()
 const dataglobal = []
 
 
-const pokemonrouter = express.Router()
 application.use(cors())
 application.use(express.json())
-const pokemonspath = require('./pokedex.json')
-const pokemontypes = require('./types.json')
 const e = require('express')
-const pokemonsImages = "./images/"
+const pokemonrouter = express.Router()
+//const pokemonsImages = "./images/"
+// const pokemonspath = require('./pokedex.json')
+// const pokemontypes = require('./types.json')
+
 
 
 
 application.post('/user/register', (request, response) => {
-    const data = request.body; 
+    const data = request.body;
     console.log('Received data:', data);
-    dataglobal.push(data)
+    dataglobal.push(data);
     response.send({
-        message: "Data received successfully",
-        receivedData: data,
+      message: 'Data received successfully',
+      receivedData: data,
     });
-})
+  });
+  application.get('/user/records', (request, response) => {
+    console.log('Returning all stored records');
+    response.json({
+      message: 'All stored user records',
+      records: dataglobal,
+    });
+  });
 
 
 pokemonrouter.get('/', (request, response) => {
