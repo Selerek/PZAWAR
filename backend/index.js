@@ -3,7 +3,8 @@ const cors = require('cors')
 const application = express()
 const dataglobal = []
 
-
+const path = require('path');
+const fs = require('fs');
 application.use(cors())
 application.use(express.json())
 const e = require('express')
@@ -13,7 +14,16 @@ const pokemonrouter = express.Router()
 // const pokemontypes = require('./types.json')
 
 
-
+application.get('/picture/:id', async (request, response) => {
+    const id = request.params.id;
+    const path_pic = path.join(__dirname, "assets", `${id}.jpg`); 
+    if (fs.existsSync(path_pic)) {
+        await new Promise(r => setTimeout(r, 1000));
+        response.sendFile(path_pic);
+      } else {
+        response.status(404).send("Image not found");
+      }
+})
 
 application.post('/user/register', (request, response) => {
     const data = request.body;
@@ -31,6 +41,7 @@ application.post('/user/register', (request, response) => {
       records: dataglobal,
     });
   });
+
 
 
 pokemonrouter.get('/', (request, response) => {
