@@ -1,7 +1,10 @@
 const express = require('express')
 const cors = require('cors')
+const { v4: uuidv4 } = require('uuid')
 const application = express()
 const dataglobal = []
+const userDataglobal = []
+
 
 const path = require('path');
 const fs = require('fs');
@@ -12,6 +15,27 @@ const pokemonrouter = express.Router()
 //const pokemonsImages = "./images/"
 // const pokemonspath = require('./pokedex.json')
 // const pokemontypes = require('./types.json')
+
+
+
+application.post('/task2', (request, response) => {
+    const data = request.body;
+    console.log('Received data:', data);
+    data.id = uuidv4();
+    userDataglobal.push(data);
+    response.send({
+      message: 'Data received successfully',
+      receivedData: data,
+    });
+  });
+  application.get('/task2/records', (request, response) => {
+    console.log('Returning all stored records');
+    response.json({
+      message: 'All stored user records',
+      records: userDataglobal,
+    });
+  });    
+
 
 application.get('/task1', (request, response) => {
     const dataofpea = {
@@ -427,6 +451,8 @@ application.get('/task1', (request, response) => {
 
     response.send(dataofpea);
 })
+
+
 
 
 
