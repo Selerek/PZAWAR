@@ -11,14 +11,14 @@ const fs = require('fs');
 application.use(cors())
 application.use(express.json())
 const e = require('express')
+const { request } = require('http')
 const pokemonrouter = express.Router()
 //const pokemonsImages = "./images/"
 // const pokemonspath = require('./pokedex.json')
 // const pokemontypes = require('./types.json')
 
 
-
-application.post('/task2', (request, response) => {
+application.post('/user/register', (request, response) => {
     const data = request.body;
     console.log('Received data:', data);
     data.id = uuidv4();
@@ -28,13 +28,33 @@ application.post('/task2', (request, response) => {
       receivedData: data,
     });
   });
-  application.get('/task2/records', (request, response) => {
+  application.get('/user/records', (request, response) => {
     console.log('Returning all stored records');
     response.json({
       message: 'All stored user records',
       records: userDataglobal,
     });
-  });    
+  });
+
+
+// application.post('/task2', (request, response) => {
+//     const data = request.body;
+//     console.log('Received data:', data);
+//     data.id = uuidv4();
+//     userDataglobal.push(data);
+//     response.send({
+//       message: 'Data received successfully',
+//       receivedData: data,
+//     });
+//   });
+//   application.get('/task2/records', (request, response) => {
+//     console.log('Returning all stored records');
+//     response.json({
+//       message: 'All stored user records',
+//       records: userDataglobal,
+//     });
+//   });
+
 
 
 application.get('/task1', (request, response) => {

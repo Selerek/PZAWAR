@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import FullApp from './FullApp';
-import Formularz from './Formularz';
+import TanStackForm from './expired/TanStackForm';
+import TabelaUserow from './TabelaUserow';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-  <Formularz />
+  <TanStackForm />
+  <TabelaUserow />
     
     
   </React.StrictMode>

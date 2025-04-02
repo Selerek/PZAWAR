@@ -25,6 +25,8 @@ export default function App() {
         .catch((error) => {
           console.error('There was an error sending the data:', error);
         });
+      // refresh the page
+      window.location.reload();
     },
   });
 
